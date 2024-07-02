@@ -1,15 +1,14 @@
-def load(file_path = "../data/train.txt"):
-  with open(file_path, 'r', encoding="utf-8") as f:
-    all_lines = f.read()
-  all_lines_list = all_lines.strip().split("\n")
-  res = []
-  for all_lines in all_lines_list:
-    res.append(all_lines.split("\t"))
-  return res
-
-
-def load_raw_data(file_path = "../data/data.txt"):
-  with open(file_path, 'r', encoding="utf-8") as f:
-    all_lines = f.read()
-  all_lines_list = all_lines.strip().split("\n")
-  return all_lines_list
+def load(input_path):
+    sentence_arrays = []
+    with open(input_path) as f:
+        for line in f:
+            if line != "":
+                line = line.rstrip("\n")
+                if "," in line:
+                    line = line.split(",")
+                else:
+                    pass
+                sentence_arrays.append(line)
+            else:
+                pass
+    return sentence_arrays
