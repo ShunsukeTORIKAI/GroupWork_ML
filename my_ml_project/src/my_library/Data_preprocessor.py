@@ -2,10 +2,10 @@ import os
 import sys
 import pickle
 import numpy as np
-import count_statistics as counter 
+import count_polarity_statistics as counter 
 
 class DataPreprocessor:
-    def __init__(self, sentence_arrays, dictionary):
+    def __init__(self, sentence_arrays, dictionary1, dictionary2):
         """
         DataPreprocessorクラスのコンストラクタ
         Args:
@@ -13,7 +13,8 @@ class DataPreprocessor:
             dictionary (dict): 極性辞書         
         """
         self.sentence_arrays = sentence_arrays
-        self.dictionary = dictionary
+        self.dictionary1 = dictionary1
+        self.dictionary2 = dictionary2
         self.X = None
         self.y = None
 

@@ -20,7 +20,7 @@ dictionary1 = dictionary1_loader.load(dictionary1_path)
 dictionary2 = dictionary2_loader.load(dictionary2_path)
 if labeled == "Y":
     sentence_arrays = input_loader.load(data_path)
-    data_preprocessor = DataPreprocessor(sentence_arrays[1:], dictionary1, dictionary2)
+    data_preprocessor = DataPreprocessor(sentence_arrays[1:], dictionary1, dictionary2) #train.txtの見出しの行を削除する
     data_preprocessor.preprocess_data_and_label()
 else:
     sentence_arrays = input_loader.load_raw_data(data_path)

@@ -23,6 +23,3 @@ def load_raw_data(input_path):  #data.txtの一文を要素に持つリストを
             else:
                 pass
     return sentence_arrays
-
-arrays = load_raw_data("data/data.txt")
-print(arrays[:10])

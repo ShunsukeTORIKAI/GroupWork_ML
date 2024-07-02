@@ -1,5 +1,5 @@
-def count(d1, d2, sentence):
-    PN_table = [0, 0, 0] #陰性、中性、陽性
+def count_and_vectorize(d1, d2, sentence):
+    PN_table = [0, 0, 0, 0] #陰性、中性、陽性, 極性持ち語数
     string=""
     for i in range(len(sentence)):
     #for word in sentence:
@@ -14,9 +14,11 @@ def count(d1, d2, sentence):
         if word in d1:
             kyokusei=a*d1[word]+1
             PN_table[kyokusei]+=1
+            PN_table[3] +=1
             string+=str(kyokusei)
         elif word in d2:
             kyokusei=a*d2[word]+1
             PN_table[kyokusei]+=1
+            PN_table[3] +=1
             string+=str(kyokusei)
     return PN_table
