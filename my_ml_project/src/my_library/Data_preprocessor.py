@@ -15,7 +15,7 @@ class DataPreprocessor:
         self.sentence_arrays = sentence_arrays
         self.dictionary1 = dictionary1
         self.dictionary2 = dictionary2
-        self.X = None
+        self.X = None   #極性の4次元ベクトルを要素に持つnumpy配列を入れる
         self.y = None
 
     def preprocess_data(self):
@@ -25,7 +25,7 @@ class DataPreprocessor:
         X_list = []
         for i in range(len(self.sentence_arrays)):
             sentence = self.sentence_arrays[i]     # 配列の要素が文章であると想定
-            count_vector = counter.count_and_vectorize(self.dictionary, sentence)
+            count_vector = counter.count_and_vectorize(self.dictionary1, self.dictionary2, sentence)
             X_list.append(count_vector)
         self.X = np.array(X_list)                  # リストをnumpyの多次元配列に変換
 
