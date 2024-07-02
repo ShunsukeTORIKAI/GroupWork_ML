@@ -7,3 +7,5 @@ data/validation.txt
 .DS_Store
 src/._.DS_Store
 src/.DS_Store
+src/my_library/._.DS_Store
+src/my_library/.DS_Store
