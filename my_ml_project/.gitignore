@@ -3,3 +3,7 @@ data/dictionary1.txt
 data/dictionary2.txt
 data/train.txt
 data/validation.txt
+._.DS_Store
+.DS_Store
+src/._.DS_Store
+src/.DS_Store
