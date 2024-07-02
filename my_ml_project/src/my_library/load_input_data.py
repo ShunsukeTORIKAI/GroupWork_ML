@@ -1,14 +1,14 @@
-def load(input_path):
+def load(input_path):   #train.txtの情報を要素に持つリストを要素に持つリスト
     sentence_arrays = []
     with open(input_path) as f:
         for line in f:
             if line != "":
                 line = line.rstrip("\n")
-                if "," in line:
-                    line = line.split(",")
+                if "\t" in line:
+                    line_arrays = line.split("\t")
                 else:
                     pass
-                sentence_arrays.append(line)
+                sentence_arrays.append(line_arrays)
             else:
                 pass
     return sentence_arrays

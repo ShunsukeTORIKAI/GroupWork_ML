@@ -5,16 +5,16 @@ import numpy as np
 import count_polarity_statistics as counter 
 
 class DataPreprocessor:
-    def __init__(self, sentence_arrays, dictionary1, dictionary2):
+    def __init__(self, sentence_arrays, d1, d2):
         """
         DataPreprocessorクラスのコンストラクタ
         Args:
             sentence_arrays (list of lists): 処理する文章の配列
-            dictionary (dict): 極性辞書         
+            d1, d2 (dict): 極性辞書を読み込んだ辞書型変数         
         """
         self.sentence_arrays = sentence_arrays
-        self.dictionary1 = dictionary1
-        self.dictionary2 = dictionary2
+        self.dictionary1 = d1
+        self.dictionary2 = d2
         self.X = None   #極性の4次元ベクトルを要素に持つnumpy配列を入れる
         self.y = None
 
