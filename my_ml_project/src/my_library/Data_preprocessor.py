@@ -44,8 +44,6 @@ class DataPreprocessor:
                 y_list.append(1)
             if len(X_list) < 4:
                 print(X_list[-1], y_list[-1])
-            if len(y_list) % 100 == 0:
-                print(len(y_list))
         self.X, self.y = np.array(X_list), np.array(y_list)  # リストをnumpyの多次元配列に変換
 
 

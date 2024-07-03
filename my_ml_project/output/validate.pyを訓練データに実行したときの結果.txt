@@ -1,0 +1,49 @@
+pcke11051m:src 2199876780$ python3 validate.py
+Evaluating SVM_0.1.pkl:
+Accuracy: 0.620775
+Precision: 0.5777000777000777
+Recall: 0.2725273382613477
+Evaluating SVM_1.pkl:
+Accuracy: 0.621875
+Precision: 0.5742420625447601
+Recall: 0.2939092186449997
+Evaluating SVM_10.pkl:
+Accuracy: 0.622575
+Precision: 0.5753911806543386
+Recall: 0.2965361353778484
+Evaluating SVM_100.pkl:
+Accuracy: 0.6246
+Precision: 0.5777854432562953
+Recall: 0.30698271122243265
+Evaluating SVM_1000.pkl:
+Accuracy: 0.62595
+Precision: 0.5797709490871981
+Recall: 0.31235872686175087
+/home/2199876780/.local/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Evaluating RF_0.1.pkl:
+Accuracy: 0.590775
+Precision: 0.0
+Recall: 0.0
+/home/2199876780/.local/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Evaluating RF_1.pkl:
+Accuracy: 0.590775
+Precision: 0.0
+Recall: 0.0
+Evaluating RF_10.pkl:
+Accuracy: 0.62955
+Precision: 0.5778067623156417
+Recall: 0.35182356894129146
+Evaluating RF_100.pkl:
+Accuracy: 0.634875
+Precision: 0.5858979353330737
+Recall: 0.36752397825157307
+Evaluating RF_1000.pkl:
+Accuracy: 0.634875
+Precision: 0.5864197530864198
+Recall: 0.3656301545604496
+Evaluating best_model.pkl:
+Accuracy: 0.620775
+Precision: 0.5777000777000777
+Recall: 0.2725273382613477
