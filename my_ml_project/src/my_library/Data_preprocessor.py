@@ -2,7 +2,7 @@ import os
 import sys
 import pickle
 import numpy as np
-import count_polarity_statistics as counter 
+from . import count_polarity_statistics as counter 
 
 class DataPreprocessor:
     def __init__(self, sentence_arrays, d1, d2):
@@ -36,7 +36,7 @@ class DataPreprocessor:
         X_list, y_list = [], []
         for i in range(len(self.sentence_arrays)):
             sentence = self.sentence_arrays[i][0]  # Sentenceの列を取得
-            count_vector = counter.count_and_vectorize(self.dictionary, sentence)
+            count_vector = counter.count_and_vectorize(self.dictionary1, self.dictionary2, sentence)
             X_list.append(count_vector)
             if self.sentence_arrays[i][4] == "0":  # Writer_Joyの列が"0"なら負例とする 
                 y_list.append(-1)
@@ -44,6 +44,8 @@ class DataPreprocessor:
                 y_list.append(1)
             if len(X_list) < 4:
                 print(X_list[-1], y_list[-1])
+            if len(y_list) % 100 == 0:
+                print(len(y_list))
         self.X, self.y = np.array(X_list), np.array(y_list)  # リストをnumpyの多次元配列に変換
 
 

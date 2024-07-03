@@ -17,9 +17,9 @@ def count_and_vectorize(d1, d2, sentence):
                 PN_table[2] += 1
             PN_table[3] += 1
         elif words[i] in d2:
-            if d1[words[i]] == -1:
+            if d2[words[i]] == -1:
                 PN_table[0] += 1
-            elif d1[words[i]] == 1:
+            elif d2[words[i]] == 1:
                 PN_table[2] += 1
             PN_table[3] += 1
     return PN_table
