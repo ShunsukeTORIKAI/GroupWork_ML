@@ -4,3 +4,6 @@ src/._.DS_Store
 src/.DS_Store
 src/my_library/._.DS_Store
 src/my_library/.DS_Store
+src/my_library/__pycache__
+output/._validate.pyファイル実行時の表示.txt
+output/._validate.pyを訓練データに実行したときの結果.txt
