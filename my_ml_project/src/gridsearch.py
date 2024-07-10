@@ -9,8 +9,8 @@ preprocessed_train_data_path = "../data/train_preprocessed.pkl"
 trainer = Trainer.Trainer()
 X, y = trainer.load_data(preprocessed_train_data_path)
 
-hyperparameters = [0.1, 0.5, 1, 5]
-degrees = [1, 10, 100]
-coef0s = [0.1, 1, 10, 100]
+hyperparameters = [0.1, 1]
+degrees = [1, 3, 5, 10]
+coef0s = [0.1, 1, 5]
 
 trainer.gridsearch_svm(hyperparameters, degrees, coef0s, X, y)
