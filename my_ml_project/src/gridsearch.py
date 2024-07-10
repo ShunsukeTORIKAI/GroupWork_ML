@@ -10,7 +10,7 @@ trainer = Trainer.Trainer()
 X, y = trainer.load_data(preprocessed_train_data_path)
 
 hyperparameters = [0.1, 1]
-degrees = [1, 3, 5, 10]
-coef0s = [0.1, 1, 5]
+degrees = [3, 5]
+coef0s = [0.1, 1]
 
 trainer.gridsearch_svm(hyperparameters, degrees, coef0s, X, y)
