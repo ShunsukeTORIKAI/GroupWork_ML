@@ -55,7 +55,10 @@ class Trainer:
         ]
         svm_cls = SVM.SVC()
         grid_search = GridSearchCV(svm_cls, param_grid, cv=5, return_train_score=True)
-        return grid_search.best_params_
+        grid_search.fit(X, y)
+        cvres = grid_search.cv_results_
+        for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+            print(mean_score, params)
 
     def train_RF(self, hyperparameter, X, y):
         """
