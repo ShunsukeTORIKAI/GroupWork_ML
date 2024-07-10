@@ -1,5 +1,6 @@
 import sklearn.svm as SVM
 import sklearn.ensemble as Ensemble
+from sklearn.model_selection import GridSearchCV
 import pickle
 import numpy
 
@@ -32,16 +33,29 @@ class Trainer:
         with open(file_path, 'wb') as f:
             pickle.dump(self.model, f)
 
-    def train_SVM(self, hyperparameter, X, y):
+    def train_SVM(self, hyperparameter, degreeh, coef0h, X, y):
         """
         SVMによる学習をおこなう。正則化パラメータの値を指定する
         Args:
             hyperparameter(float): 正則化パラメータの値
+            degreeh(int): 多項式カーネルの次数
+            coef0h(int): 高次多項式と低次多項式からどの程度の影響を認めるかのパラメータ
             X (numpy.ndarray): 前処理済みの訓練データ
             y (numpy.ndarray): ラベルデータ
         """     
-        self.model = SVM.SVC(C=hyperparameter)
+        self.model = Pipeline([
+            ("scaler", StandardScaler()),
+            ("svm_clf", SVM(kernel="poly", degree = degreeh, coef0 = coef0h, C = hyperparameter))
+        ])
         self.model.fit(X,y)
+    
+    def gridsearch_svm(self, hyperparameter_list, degree_list, coef0_list, X, y):
+        param_grid = [
+            {"degree": degree_list, "coef0": coef0_list, "C": hyperparameter_list},
+        ]
+        svm_cls = SVC()
+        grid_search = GridSearchCV(svm_cls, param_grid, cv=5, return_train_score=True)
+        return grid_search.best_params_["degree"], grid_search.best_params_["coef0"], grid_search.best_params_["C"]
 
     def train_RF(self, hyperparameter, X, y):
         """
