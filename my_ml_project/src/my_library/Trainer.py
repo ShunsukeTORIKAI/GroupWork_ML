@@ -54,7 +54,7 @@ class Trainer:
             {"degree": degree_list, "coef0": coef0_list, "C": hyperparameter_list},
         ]
         svm_cls = SVM.SVC()
-        grid_search = GridSearchCV(svm_cls, param_grid, cv=5, return_train_score=True)
+        grid_search = GridSearchCV(svm_cls, param_grid, cv=3, return_train_score=True)
         grid_search.fit(X, y)
         cvres = grid_search.cv_results_
         for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
