@@ -55,7 +55,7 @@ class Trainer:
         ]
         svm_cls = SVM.SVC()
         grid_search = GridSearchCV(svm_cls, param_grid, cv=5, return_train_score=True)
-        return grid_search.best_params_["degree"], grid_search.best_params_["coef0"], grid_search.best_params_["C"]
+        return grid_search.best_params_
 
     def train_RF(self, hyperparameter, X, y):
         """

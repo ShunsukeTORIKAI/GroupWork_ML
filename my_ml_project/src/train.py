@@ -14,7 +14,8 @@ hyperparameters = [0.1, 0.5, 1, 5]
 degrees = [1, 10, 100]
 coef0s = [0.1, 1, 10, 100]
 
-besthy, bestde, bestco = trainer.gridsearch_svm(hyperparameters, degrees, coef0s, X, y)
+best_parameter = trainer.gridsearch_svm(hyperparameters, degrees, coef0s, X, y)
+besthy, bestde, bestco = best_parameter["C"], best_parameter["degree"], best_parameter["coef0"]
 trainer.train_SVM(besthy, bestde, bestco, X, y)
 model_dump_path = os.path.join(model_dump_path_base , "SVM_"+str(besthy)+"_"+str(bestde)+"_"+str(bestco)+".pkl")
 trainer.dump_model(model_dump_path)
